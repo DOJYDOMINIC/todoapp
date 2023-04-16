@@ -37,6 +37,12 @@ class _HomePageState extends State<HomePage> {
 
   final my_box = Hive.box('my_box');
 
+  @override
+  void initState(){
+    super.initState();
+    _refreshItem();
+  }
+
   _refreshItem() {
     final data = my_box.keys.map((key) {
       final item = my_box.get(key);
